@@ -1,0 +1,35 @@
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.egg-info/
+*.eggs/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.env
+*.venv/
+venv/
+env/
+
+# Static files
+staticfiles/
+media/
+
+#Docker
+docker-compose.override.yml
+Dockerfile.dev
+
+
+*.local
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+.DS_Store
