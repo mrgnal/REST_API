@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ .
 
 COPY ./entrypoint.sh /entrypoint.sh
-RUN cmod +x ./entrypoint.sh
+RUN chmod +x ./entrypoint.sh
 
 EXPOSE 80
 
