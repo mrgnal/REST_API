@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
 from .models import Course, Student, Grade
 from .serializers import CourseSerializer, StudentSerializer, GradeSerializer, StudentDetailSerializer, GradeDetailSerializer
 
@@ -49,3 +49,7 @@ class GradeViewSet(viewsets.ModelViewSet):
         grades = Grade.objects.all()
         serializer = GradeDetailSerializer(grades, many=True)
         return Response(serializer.data)
+
+@api_view(['GET'])
+def hello_world(request):
+    return Response({"message": "Hello, World!"})
