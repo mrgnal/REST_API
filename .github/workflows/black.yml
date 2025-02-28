@@ -7,21 +7,21 @@ on:
 
 jobs:
 
-  lint:
-    name: Lint code base
-    runs-on: ubuntu-latest
-    outputs:
-      lint_failed: ${{ steps.linter.outcome == 'failure' }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run linter
-        uses: github/super-linter@v5
-        continue-on-error: true
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    lint:
+      name: Lint code base
+      runs-on: ubuntu-latest
+      outputs:
+        lint_failed: ${{ steps.linter.outcome == 'failure' }}
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+  
+        - name: Run linter
+          uses: github/super-linter@v5
+          continue-on-error: true
+          env:
+            DEFAULT_BRANCH: main
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     format:
       name: Auto-format with Black
