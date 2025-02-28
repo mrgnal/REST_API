@@ -33,3 +33,14 @@ Dockerfile.dev
 *.sublime-project
 *.sublime-workspace
 .DS_Store
+
+/terraform/global/.terraform
+/terraform/staging/.terraform
+
+/terraform/global/.terraform.lock.hcl
+/terraform/staging/.terraform.lock.hcl
+
+*.tfvars
+**/.terraform/
+*.tfstate
+*.tfstate.backup
