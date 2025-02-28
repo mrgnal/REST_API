@@ -11,3 +11,12 @@ __pycache__/
 .git
 .vscode
 .idea
+
+.venv/
+venv/
+
+terraform/*
+
+docker-compose.yml
+Dockerfile
+entrypoint.sh
