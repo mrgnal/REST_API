@@ -60,8 +60,8 @@ resource "aws_ecs_task_definition" "app_conteiner" {
             ]
             secrets =[
                 {name = "DB_HOST", valueFrom = aws_ssm_parameter.db_host.arn},
-                {name = "DATABASE_NAME", valueFrom = aws_ssm_parameter.db_name.arn},
-                {name = "DB_USER", valueFrom = aws_ssm_parameter.db_username.arn},
+                {name = "DB_NAME", valueFrom = aws_ssm_parameter.db_name.arn},
+                {name = "DB_USERNAME", valueFrom = aws_ssm_parameter.db_username.arn},
                 {name = "DB_PASSWORD", valueFrom = aws_ssm_parameter.db_password.arn},
                 {name = "SECRET_KEY", valueFrom = aws_ssm_parameter.drf_secret_key.arn},
             ]
