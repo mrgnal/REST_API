@@ -18,7 +18,10 @@ services:
     env_file:
       - .env
     environment:
-      DATABASE_URL: postgres://${DB_USERNAME}:${DB_PASSWORD}@db:5432/${DB_NAME}
+      DB_HOST: ${DB_HOST}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./src:/app
     networks:
