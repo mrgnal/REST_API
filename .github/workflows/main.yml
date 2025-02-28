@@ -10,9 +10,29 @@ env:
     ECR_REPO: practice-image-repository
 
 jobs:
+
+    black-format:
+        name: Check Python formatting with Black
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v4
+    
+          - name: Set up Python
+            uses: actions/setup-python@v4
+            with:
+              python-version: "3.13"
+    
+          - name: Install Black
+            run: pip install black
+    
+          - name: Run Black check
+            run: black --check .
+            
     lint:
         name: Lint code base
         runs-on: ubuntu-latest
+        needs: black-format
         steps:
           - name: Checkout code
             uses: actions/checkout@v4
@@ -22,8 +42,6 @@ jobs:
             env:
               DEFAULT_BRANCH: main
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              LINTER_RULES_PATH: .github/linters
-              VALIDATE_PYTHON_BLACK: true
 
 #    test:
 #        name: App test
