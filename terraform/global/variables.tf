@@ -26,3 +26,12 @@ variable "ecs_service_name" {
 variable "ecs_cluster_name" {
     type = string
 }
+
+
+# variable "repo_owner" {
+#   description = "GitHub repo owner"
+# }
+
+# variable "repo_name" {
+#   description = "GitHub repo name"
+# }

@@ -1,7 +1,7 @@
 terraform {
 
     backend "s3" {
-          bucket         = "mg-practice-task"
+          bucket         = "mg-practice"
           key            = "staging/terraform.tfstate"
           region         = "eu-north-1"
           dynamodb_table = "terraform-state-locking"
@@ -31,7 +31,7 @@ data "terraform_remote_state" "global" {
 
 #ECS
 resource "aws_ecs_cluster" "ecs_cluster" {
-    name = "practice-staging-claster"
+    name = "practice-staging-cluster"
 
     setting {
         name  = "containerInsights"

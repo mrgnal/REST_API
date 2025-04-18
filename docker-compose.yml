@@ -19,7 +19,7 @@ services:
       - .env
     environment:
       DB_HOST: ${DB_HOST}
-      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
     volumes:
@@ -40,5 +40,5 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.28.0.0/16
-          gateway: 172.28.0.1
+        - subnet: 174.28.0.0/16
+          gateway: 174.28.0.1

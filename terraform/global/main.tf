@@ -1,7 +1,7 @@
 terraform {
 
     backend "s3" {
-          bucket         = "mg-practice-task"
+          bucket         = "mg-practice"
           key            = "global/terraform.tfstate"
           region         = "eu-north-1"
           dynamodb_table = "terraform-state-locking"
